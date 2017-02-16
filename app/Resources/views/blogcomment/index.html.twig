@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                <a style="margin-bottom: 15px;margin-left: 10px;" class="btn btn-primary" href="{{ path('administration') }}">Retour à l'administration général</a>
+                <a style="margin-bottom: 15px;margin-left: 10px;" class=" btn btn-primary" href="{{ path('blogpost_index') }}">Accès à l'administration des Articles</a>
+
+                    <div class="panel panel-default panel-table">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col col-xs-6">
+                                    <h3 style="font-weight: bold; font-size: 20px" class="panel-title">Liste de toutes les années de championnat par équipe</h3>
+                                </div>
+                                <div class="col col-xs-6 text-right">
+                                    <!--<button type="button" class="btn btn-sm btn-primary btn-create">Create New</button>-->
+                                    {% if is_granted('ROLE_ADMIN') %}        
+                                        <a class="btn btn-sm btn-primary btn-create" href="{{ path('blogcomment_new') }}">créer un nouveau commentaire</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped table-bordered table-list">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th class="hidden-xs">Auteur</th>
+                                        <th>Date de création</th>
+                                        <th>Contenue</th>
+                                        <th><em class="fa fa-cog"></em></th>
+                                    </tr> 
+                                </thead>
+                                <tbody>
+                                    {% for blogComment in blogComments %}
+                                        <tr>
+                                            <td>{{ blogComment.id }}</td>
+                                            <td><a href="{{ path('blogcomment_show', { 'id': blogComment.id }) }}">{{ blogComment.author }}</a></td>
+                                            <td>{% if blogComment.createdAt %}{{ blogComment.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                            <td>{{ blogComment.content|raw }}</td>
+                                            <td align="center">
+                                                <a class="btn btn-default" href="{{ path('blogcomment_show', { 'id': blogComment.id }) }}"><em class="fa fa-eye"></em></a>
+                                                {% if is_granted('ROLE_ADMIN') %}   
+                                                    <a class="btn btn-primary" href="{{ path('blogcomment_edit', { 'id': blogComment.id }) }}"><em class="fa fa-pencil"></em></a>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="panel-footer">
+                            <div class="row">
+                               <!-- <div class="col col-xs-4">Page 1 of 5
+                                </div>
+                                <div class="col col-xs-8">
+                                    <ul class="pagination hidden-xs pull-right">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                    </ul>
+                                    <ul class="pagination visible-xs pull-right">
+                                        <li><a href="#">«</a></li>
+                                        <li><a href="#">»</a></li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                        </div>
+                                
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
+

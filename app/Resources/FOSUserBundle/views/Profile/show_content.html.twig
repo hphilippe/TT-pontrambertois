@@ -1,0 +1,41 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <!--<p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>-->
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="requestName">{{ 'profile.show.username'|trans }}</label>  
+        <div class="col-md-4">
+            <input style="background-color: white" id="requestName" name="requestName" value="{{ user.username }}" class="form-control input-md" required="" type="text" readonly>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="requestName">{{ 'profile.show.email'|trans }}</label>  
+        <div class="col-md-4">
+            <input style="background-color: white" id="requestName" name="requestName" value="{{ user.email }}" class="form-control input-md" required="" type="text" readonly>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="requestName">Nom</label>  
+        <div class="col-md-4">
+            <input style="background-color: white" id="requestName" name="requestName" value="{{ user.nom }}" class="form-control input-md" required="" type="text" readonly>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="requestName">prénom</label>  
+        <div class="col-md-4">
+            <input style="background-color: white" id="requestName" name="requestName" value="{{ user.prenom }}" class="form-control input-md" required="" type="text" readonly>
+        </div>
+    </div>
+        
+    <div class="form-group">
+        <label class="col-md-4 control-label" for="requestName">Niveau Administration</label>  
+        <div class="col-md-4">
+            <input style="background-color: white" id="requestName" name="requestName" value="{% if is_granted('ROLE_SUPER_ADMIN') %}Super Administrateur{% elseif is_granted('ROLE_ADMIN') %}Administrateur{% else %}Visiteur{% endif %}" class="form-control input-md" required="" type="text" readonly>
+        </div>
+    </div>
+</div>

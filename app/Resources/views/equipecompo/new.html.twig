@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>création d'une composition d'équipe</h1>
+
+    {{ form_start(form) }}
+        {#{{ form_label(form.nomEquipe) }}#} Nom de l'équipe (ex: 1 PR Poule A):
+        {{ form_widget(form.nomEquipe) }}
+        {{ form_errors(form.nomEquipe) }}
+        
+        {#{{ form_label(form.anne) }}#} Équipe rattaché à l'année d'ID 
+        {{ form_widget(form.anne) }}
+        {{ form_errors(form.anne) }} 
+        
+        <div  style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Créer l'équipe" />
+    {{ form_end(form) }}
+
+        <a class="btn btn-primary" href="{{ path('equipecompo_index') }}">Retour à la liste des équipes</a>
+        </div>
+    
+    liste des années :
+    {% for anneCompet in anneCompets %}
+     <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anneCompet.id }}</td>
+            </tr>
+            <tr>
+                <th>Anneedepart</th>
+                <td>{{ anneCompet.anneeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ anneCompet.phase }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'équipe</th>
+                <th>{{ anneCompet.numberEquipe }}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+{% endblock %}

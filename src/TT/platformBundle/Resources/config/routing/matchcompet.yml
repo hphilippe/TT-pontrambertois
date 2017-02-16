@@ -1,0 +1,24 @@
+matchcompet_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:matchCompet:index" }
+    methods:  GET
+
+matchcompet_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:matchCompet:show" }
+    methods:  GET
+
+matchcompet_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:matchCompet:new" }
+    methods:  [GET, POST]
+
+matchcompet_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:matchCompet:edit" }
+    methods:  [GET, POST]
+
+matchcompet_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:matchCompet:delete" }
+    methods:  DELETE

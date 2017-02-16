@@ -1,0 +1,24 @@
+adminBureau_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:Bureau:index" }
+    methods:  GET
+
+adminBureau_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:Bureau:show" }
+    methods:  GET
+
+adminBureau_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:Bureau:new" }
+    methods:  [GET, POST]
+
+adminBureau_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:Bureau:edit" }
+    methods:  [GET, POST]
+
+adminBureau_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:Bureau:delete" }
+    methods:  DELETE

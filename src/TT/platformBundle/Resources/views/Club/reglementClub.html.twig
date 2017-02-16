@@ -1,0 +1,68 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+     <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Règlement intérieur du Club</h1>
+        <div class="box">
+            <!-- <p class="corp-description">Membre d’honneur :</p>-->
+
+            <p style="font-weight: bold; color: #1278fc; margin: 0px 0 0px 110px;" class="corp-sous-title">Article 1 : Séances d'entraînement</p>
+            <br>
+            <p style="color: #fc202f; margin-bottom: 0px;" class="corp-description">Seules les personnes ayant réglé l'intégralité des formalités d'inscription seront autorisées à participer aux divers entraînements</p>
+            <br>
+            <p class="corp-description"> - <strong>Tenue sportive</strong> exigée : maillot, short, chaussures d'intérieur... </p>
+            <p class="corp-description"> - <strong>Respect du matériel</strong> du club (balles, tables, filets, séparations, marqueurs, raquettes...). </p>
+            <p class="corp-description"> - Respect des créneaux indiqués sur le Planning. </p>
+            <p class="corp-description"> - <strong>Ramassage des balles</strong> à la fin des séances d'entraînement</p>
+            <p class="corp-description"> - Respect des horaires d'ouverture et de fermeture de la salle</p>
+            <p class="corp-description"> - Respect de la <strong>propreté de la salle</strong>, du Club, des vestiaires, sanitaires ou tout autres locaux, ainsi que l'affichage. </p>
+            <p class="corp-description"> - L'accès aux sanitaires et toilette par l'intermédiaire du dojo, doit se faire <strong>sans marcher sur les tapis</strong> </p>
+            <br>
+            <p style="font-weight: bold; color: #1278fc; margin: 0px 0 0px 110px;" class="corp-sous-title">Article 2 : Compétitions</p>
+            <br>
+            <p style="color: #fc202f; margin-bottom: 0px;" class="corp-description">Seules les personnes ayant réglé l'intégralité des formalités d'inscription seront autorisées à participer aux diverses compétitions </p>
+            <br>
+            <p class="corp-description"> - Chacun doit veiller au respect des règlements, horaires, participer à la vie du club et faire preuve de <strong>fair-play</strong> en toute occasion. </p>
+            <p class="corp-description"> - Chaque compétiteur veillera à la mise en place et au <strong>rangement des aires de jeu</strong> (tables, marqueurs, tables d'arbitrage, chaises). </p>
+            <p class="corp-description"> - Chaque compétiteur devra porter aux minimums <strong>un short et des basket adaptés</strong> lors des compétitions ainsi que le <strong>maillot du club</strong> dans la mesure du possible.</p>
+            <p class="corp-description"> - Les pénalités financières individuelles seront à la charge de la personne concernée (cartons, pénalités pour <strong>absence non justifiée</strong> à un tour de Critérium Fédéral...). </p>
+            <p class="corp-description"> - Tout accompagnateur qui transporte des membres du club doit respecter les règles du code de la route. </p>
+            <p class="corp-description"> - L'accès aux sanitaires et toilette par l'intermédiaire du dojo, doit se faire <strong>sans marcher sur les tapis</strong> </p>
+            <p class="corp-description"> - Le club fournira aux joueurs des équipes évoluant en National : </p>
+            <ul style="margin: 0;">
+                <li><p class="corp-description"> 1 tenue complète (pour 3 saisons)</p></li>
+                <li><p class="corp-description"> 2 paires de plaques par phase </p></li>
+            </ul>
+            <br>
+            <p style="font-weight: bold; color: #1278fc; margin: 0px 0 0px 110px;" class="corp-sous-title">Article 3 : Secrétariat</p>
+            <br>
+            <p class="corp-description"> - Toute personne sollicitée pour une activité organisée par l'association devra respecter le délai de réponse fixé ou s'abstenir d'y
+                participer afin de ne pas compromettre la réalisation du dis projet. </p>
+            <p class="corp-description"> Tout parent ou tuteur légal, qui souhaiterait que les photos représentant son(ses) enfant(s) ne soient pas affichées dans la
+                salle, sur le site de l'association, Facebook, Twitter, Flickr, le site de la ville ou sa revue, doit le signaler par écrit lors de
+                l'inscription de son(ses) enfant(s).</p>
+            <br>
+            <p style="font-weight: bold; color: #1278fc; margin: 0px 0 0px 110px;" class="corp-sous-title">Article 4 : Précautions</p>
+            <br>
+            <p class="corp-description"> - Tout objet n'ayant aucun rapport avec la pratique du tennis de table est prohibé, sauf moyen de transport (couteau, armes à feu, tabac, cigarettes, drogues, boissons alcoolisées...). </p>
+            <p class="corp-description"> - Le club et ses dirigeants ne sont, en aucun cas, responsables des effets personnels, vêtements, sacs de sport lors des séances d'entraînements ou toutes compétitions. </p>
+            <p class="corp-description"> - La responsabilité du club n'est pas engagée tant que la personne n'a pas répondu à l'appel de chaque début de séance. </p>
+            <br>
+            <p style="font-weight: bold; color: #1278fc;" class="corp-sous-title">Article 5 : Sanctions</p>
+            <p style="color: #fc202f; margin-bottom: 0px;" class="corp-description">Tout non-respect du présent règlement sera examiné par le Bureau et pourra faire l'objet de sanctions disciplinaires.</p>
+            <br>
+            <p class="corp-description">Version 12/08/2015</p>
+
+        </div>
+    </div>
+
+{% endblock %}

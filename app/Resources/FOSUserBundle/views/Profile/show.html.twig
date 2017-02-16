@@ -1,0 +1,35 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttworld.png' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+    
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Profil</h1>
+        
+        <div class="row">
+            <form class="form-horizontal">
+                <fieldset>
+                    
+                    {% include "FOSUserBundle:Profile:show_content.html.twig" %}
+                    
+                    <div class="form-group">
+                        <div class="col-md-4 col-md-offset-2">
+                            <a class="btn btn-primary btn-block btn-lg" href="{{ path('fos_user_profile_edit') }}">Editer le profile</a>
+                        </div>
+                        <div class="col-md-4 ">
+                            <a class="btn btn-primary btn-block btn-lg" href="{{ path('fos_user_change_password') }}">Changer le mot de passe</a>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </div>
+    </div>
+{% endblock fos_user_content %}

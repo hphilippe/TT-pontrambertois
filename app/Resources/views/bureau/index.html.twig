@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bureau list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Poste</th>
+                <th>Categorie</th>
+                <th>Path</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bureau in bureaus %}
+            <tr>
+                <td><a href="{{ path('adminBureau_show', { 'id': bureau.id }) }}">{{ bureau.id }}</a></td>
+                <td>{{ bureau.nom }}</td>
+                <td>{{ bureau.poste }}</td>
+                <td>{{ bureau.categorie }}</td>
+                <td>{{ bureau.path }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('adminBureau_show', { 'id': bureau.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('adminBureau_edit', { 'id': bureau.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('adminBureau_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,24 @@
+equipecompo_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:EquipeCompo:index" }
+    methods:  GET
+
+equipecompo_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:EquipeCompo:show" }
+    methods:  GET
+
+equipecompo_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:EquipeCompo:new" }
+    methods:  [GET, POST]
+
+equipecompo_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:EquipeCompo:edit" }
+    methods:  [GET, POST]
+
+equipecompo_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:EquipeCompo:delete" }
+    methods:  DELETE

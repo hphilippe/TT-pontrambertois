@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Création du résumés</h1>
+
+    {{ form_start(form) }}
+        {{ form_label(form.title) }}
+        {{ form_errors(form.title) }}
+        {{ form_widget(form.title) }}
+        
+        <div>
+        {{ form_label(form.content) }}
+        {{ form_errors(form.content) }}
+        {{ form_widget(form.content) }}
+        </div>
+        
+        {{ form_label(form.author) }}
+        {{ form_errors(form.author) }}
+        {{ form_widget(form.author) }}
+        
+        {#{{ form_label(form.Match) }}#} Rattacher le résumés au match d'ID
+        {{ form_errors(form.Match) }}
+        {{ form_widget(form.Match) }}
+        <div  style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Créer le contenu" />
+    {{ form_end(form) }}
+
+
+        <a class="btn btn-primary" href="{{ path('resumpost_index') }}">Retour à la liste des résumés</a>
+        </div>
+        
+    <script>
+        var CKEDITOR_BASEPATH = '/ttpontrambertois/web/bundles/ttplatform/ckeditor/';
+    </script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Bureau</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bureau.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ bureau.nom }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ bureau.poste }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ bureau.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ bureau.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('adminBureau_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('adminBureau_edit', { 'id': bureau.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

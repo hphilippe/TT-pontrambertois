@@ -1,0 +1,24 @@
+annecompet_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:anneCompet:index" }
+    methods:  GET
+
+annecompet_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:anneCompet:show" }
+    methods:  GET
+
+annecompet_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:anneCompet:new" }
+    methods:  [GET, POST]
+
+annecompet_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:anneCompet:edit" }
+    methods:  [GET, POST]
+
+annecompet_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:anneCompet:delete" }
+    methods:  DELETE

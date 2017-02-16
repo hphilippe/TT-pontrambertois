@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Édition de l'aticle</h1>
+    
+    {% if is_granted('ROLE_ADMIN') %}
+    {{ form_start(edit_form) }}
+        {{ form_label(edit_form.title) }}
+        {{ form_errors(edit_form.title) }}
+        {{ form_widget(edit_form.title) }}
+        
+        <div style="display: block">
+        {{ form_label(edit_form.content) }}
+        {{ form_errors(edit_form.content) }}
+        </div>
+        {{ form_widget(edit_form.content) }}
+        
+        <div style="display: block">
+        {{ form_label(edit_form.author) }}
+        {{ form_errors(edit_form.author) }}
+        {{ form_widget(edit_form.author) }}
+        </div>
+        
+        <div style="display: block">
+        {{ form_label(edit_form.categorie) }}
+        {{ form_errors(edit_form.categorie) }}
+        {{ form_widget(edit_form.categorie) }}
+        </div>
+        
+        <div style="margin: 10px 20px;">
+           
+        <input class="btn btn-secondary" type="submit" value="Mettre à jour le contenue" />
+            
+    {{ form_end(edit_form) }}
+
+        <a class="btn btn-primary" style="color: white;text-decoration: none;" href="{{ path('blogpost_index') }}">retour à la liste de tous les articles</a>
+        
+        {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+            <input class="btn btn-secondary" type="submit" value="Supprimer le contenue">
+        {{ form_end(delete_form) }}
+        
+        </div>
+    {% endif %}
+        
+    <script>
+        var CKEDITOR_BASEPATH = '/ttpontrambertois/web/bundles/ttplatform/ckeditor/';
+    </script>
+
+{% endblock %}

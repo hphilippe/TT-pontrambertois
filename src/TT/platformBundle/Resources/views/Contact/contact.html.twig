@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+     <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Contact, information</h1>
+        <div class="box">
+
+            <p class="corp-description" style="margin-left: 100px;">Pour toute question, veuillez nous envoyer un mail à l'adresse suivante : <strong>corresttpr@gmail.com</strong> </p>
+            <p class="corp-description">Correspondant du club en cas d'urgence : SCHAMBERGER Patrice : <strong>06 32 34 27 95</strong></p>
+
+            <h1>Accès à la salle</h1>
+
+            <p class="alert alert-success">Salle principale :<br/>
+                Saint Just Saint Rambert 42170, 37 Allée des Mûriers</p>
+            <iframe width="100%" height="350" frameborder="0" class="wrapper" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?cbll=45.498352,4.26092&amp;layer=c&amp;panoid=iMFXTQJ92vPxI3hFlVqAsg&amp;cbp=12,246.81,,1,-0.5&amp;ie=UTF8&amp;ll=45.498647,4.185791&amp;spn=0.151605,0.54451&amp;t=m&amp;z=11&amp;source=embed&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.fr/maps?cbll=45.498352,4.26092&amp;layer=c&amp;panoid=iMFXTQJ92vPxI3hFlVqAsg&amp;cbp=12,246.81,,1,-0.5&amp;ie=UTF8&amp;ll=45.498647,4.185791&amp;spn=0.151605,0.54451&amp;t=m&amp;z=11&amp;source=embed" style="color:#0000FF;text-align:left">Agrandir le plan</a></small>
+            <br/><br/>
+
+            <p class="alert alert-success">Salle secondaire (polyvalente) :<br/>
+                Saint Just Saint Rambert 42170, Avenue des Barques</p>
+            <iframe width="100%" height="350" frameborder="0" class="wrapper" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=saint+just+saint+rambert+polyvalente&amp;aq=&amp;sll=45.535259,4.277269&amp;sspn=0.042145,0.068064&amp;ie=UTF8&amp;hq=polyvalente&amp;hnear=Saint-Just-Saint-Rambert,+Loire,+Rh%C3%B4ne-Alpes&amp;ll=45.500295,4.248571&amp;spn=0.006295,0.017536&amp;t=m&amp;layer=c&amp;cbll=45.499662,4.247422&amp;panoid=kudYtoj2EIVL08BtHrttaA&amp;cbp=12,71.82,,1,0.68&amp;output=svembed"></iframe><br /><small><a href="https://maps.google.fr/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=saint+just+saint+rambert+polyvalente&amp;aq=&amp;sll=45.535259,4.277269&amp;sspn=0.042145,0.068064&amp;ie=UTF8&amp;hq=polyvalente&amp;hnear=Saint-Just-Saint-Rambert,+Loire,+Rh%C3%B4ne-Alpes&amp;ll=45.500295,4.248571&amp;spn=0.006295,0.017536&amp;t=m&amp;layer=c&amp;cbll=45.499662,4.247422&amp;panoid=kudYtoj2EIVL08BtHrttaA&amp;cbp=12,71.82,,1,0.68" style="color:#0000FF;text-align:left">Agrandir le plan</a></small>
+            <p class="corp-description"></p>
+
+        </div>
+    </div>
+
+{% endblock %}

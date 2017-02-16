@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Éditer la composition d'équipe</h1>
+    
+    {{ form_start(edit_form) }}
+        {#{{ form_label(edit_form.nomEquipe) }}#} Nom de l'équipe (ex: 1 PR Poule A):
+        {{ form_widget(edit_form.nomEquipe) }}
+        {{ form_errors(edit_form.nomEquipe) }}
+        
+        {#{{ form_label(edit_form.anne) }}#} Équipe rattaché à l'année d'ID 
+        {{ form_widget(edit_form.anne) }}
+        {{ form_errors(edit_form.anne) }} 
+        
+        <div style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+    {{ form_end(edit_form) }}
+
+            <a class="btn btn-primary" href="{{ path('equipecompo_index') }}">Retour à la liste des équipes</a>
+
+            {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+                <input class="btn btn-secondary" type="submit" value="Supprimer l'équipe">
+            {{ form_end(delete_form) }}
+        </div>
+    
+    liste des années :
+    {% for anneCompet in anneCompets %}
+     <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anneCompet.id }}</td>
+            </tr>
+            <tr>
+                <th>Anneedepart</th>
+                <td>{{ anneCompet.anneeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ anneCompet.phase }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'équipe</th>
+                <th>{{ anneCompet.numberEquipe }}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+{% endblock %}

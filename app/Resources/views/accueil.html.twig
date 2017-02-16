@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}TT Pontrambertois{% endblock %}</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=0.45">
+        {% block stylesheets %}
+            {% stylesheets filter='cssrewrite, ?scssphp'
+            'bundles/ttplatform/css/style.css' 
+            'bundles/utilisateurs/css/styleUser.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+            {% endstylesheets %}
+        {% endblock %}
+        {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+        <link rel="icon" type="image/png" href={{ asset('bundles/ttplatform/images/photo2.png') }} />
+    </head>
+    <body class="sidebar">
+    
+
+      {% include '::menu.html.twig' %}
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper" style="padding-top: 0px;">
+                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                    <p class="hamb-title" style="margin-left: 40px; margin-top: 4px;">Menu</p>
+                </button>
+
+                {% block body %}{% endblock %}
+                {% include '::log.html.twig' %}
+
+            </div>
+            <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->   
+
+
+        {% block javascripts %}
+          {% javascripts 
+          '@TTplatformBundle/Resources/public/js/menu.js' filter='?jsqueeze' 
+          '@TTplatformBundle/Resources/public/js/sidebar.js' filter='?jsqueeze'
+          '@UtilisateursBundle/Resources/public/js/log.js' filter='?jsqueeze' %}
+              <script type="text/javascript" src="{{ asset_url }}"></script>
+          {% endjavascripts %}
+        {% endblock %}
+    </body>
+</html>

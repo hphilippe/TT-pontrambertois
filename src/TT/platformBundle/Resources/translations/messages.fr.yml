@@ -1,0 +1,9 @@
+label:
+  name: Nom
+  prenom: Prénom
+  author: Auteur
+  mail: Email
+  content: Contenue
+  title: Titre
+  categorie: Catégorie
+  equipe: numéro de l'Équipe

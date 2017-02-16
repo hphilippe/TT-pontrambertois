@@ -1,0 +1,24 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttworld.png' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+    
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Réinitialisation du mot de passe</h1>
+        
+        <div class="row">
+
+            {% include "FOSUserBundle:Resetting:request_content.html.twig" %}
+                    
+        </div>
+    </div>
+            
+{% endblock fos_user_content %}

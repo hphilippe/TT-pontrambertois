@@ -1,0 +1,55 @@
+{#{% extends "FOSUserBundle::layout.html.twig" %}#}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{#{% block fos_user_content %}#}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form class="email-login" action="{{ path("fos_user_security_check") }}" method="post">
+    
+    {#<div class="social-login">
+        <a href="{{ hwi_oauth_login_url(facebook) }}">
+            <i class="fa fa-facebook fa-lg"></i>
+            Connexion par FB
+        </a>
+        <a href="{{ hwi_oauth_login_url(google) }}">
+            <i class="fa fa-google-plus fa-lg"></i>
+            Connexion par Google
+        </a>
+    </div>#}
+            
+    <div style="display:none" class="social-login">
+        <a href="http://www.tt-pontrambertois.fr/connect/facebook">
+            <i class="fa fa-facebook fa-lg"></i>
+            Connexion par FB
+        </a>
+        <a href="http://www.tt-pontrambertois.fr/connect/google">
+            <i class="fa fa-google-plus fa-lg"></i>
+            Connexion par Google
+        </a>
+    </div>
+    
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <div class="u-form-group">
+        {#<label for="username">{{ 'security.login.username'|trans }}</label>#}
+        <input type="text" placeholder="Username" id="username" name="_username" value="{{ last_username }}" required="required" />
+    </div>
+    <div class="u-form-group">
+        {#<label for="password">{{ 'security.login.password'|trans }}</label>#}
+        <input type="password" placeholder="Mot de passe" id="password" name="_password" required="required" />
+    </div>
+    <div class="u-form-group">
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+    </div>
+    <div class="u-form-group">
+        <input class="button" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+    </div>
+    <div class="u-form-group">
+        <a href="{{ path('fos_user_resetting_request') }}" class="forgot-password">Mot de passe oublié?</a>
+    </div>
+</form>
+
+{#{% endblock fos_user_content %}#}

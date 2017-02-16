@@ -1,0 +1,42 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Administration du site </h1>
+
+        <div class="box">
+            <br>
+            <br>
+            
+            <div>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('blogpost_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration des Articles</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('blogcomment_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration des Commentaires</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminResumMatch') }}" class="col-xs-12 btn btn-primary">Accès à l'administration des Résumés des matchs</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('listeUser') }}" class="col-xs-12 btn btn-primary">Accès à l'administration des utilisateurs</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('sponsor_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration des sponsors</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminBureau_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration du Bureau</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminInscription_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration Inscription</a>
+            {% if is_granted('ROLE_SUPER_ADMIN') %}   
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminMultimedia_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration du Multimédia</a>
+            <a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminChampionnat_index') }}" class="col-xs-12 btn btn-primary">Accès à l'administration du championnat</a>
+            {#<a style="padding: 20px; margin: 5px 0px;" href="{{ path('adminMultimedia') }}" class="col-xs-12 btn btn-primary">Accès à l'administration du multimédia</a>#}
+            {% endif %}
+            </div>
+            
+            <p style="margin-top:317px" class="corp-sous-title">Manuel d'utilisation de l'administration du site</p>
+            <object data="{{ asset('bundles/ttplatform/images/Manuel_utilisation_site_web_ttpontrambertois.pdf') }}" type="application/pdf" title="adresse et champ eq" width="100%" height="885"></object>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

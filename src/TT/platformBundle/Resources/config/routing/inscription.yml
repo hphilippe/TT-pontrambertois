@@ -1,0 +1,24 @@
+adminInscription_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:Inscription:index" }
+    methods:  GET
+
+adminInscription_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:Inscription:show" }
+    methods:  GET
+
+adminInscription_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:Inscription:new" }
+    methods:  [GET, POST]
+
+adminInscription_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:Inscription:edit" }
+    methods:  [GET, POST]
+
+adminInscription_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:Inscription:delete" }
+    methods:  DELETE

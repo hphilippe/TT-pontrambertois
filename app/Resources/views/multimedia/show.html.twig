@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Multimedia</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ multimedia.id }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ multimedia.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ multimedia.path }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('adminMultimedia_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('adminMultimedia_edit', { 'id': multimedia.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

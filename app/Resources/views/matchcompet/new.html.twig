@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Création du score</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        
+        <div  style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Créer le contenue" />
+    {{ form_end(form) }}
+
+
+        <a class="btn btn-primary" href="{{ path('matchcompet_index') }}">Retour à la liste des scores</a>
+        </div>
+        
+{% endblock %}

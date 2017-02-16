@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+    <h1>anneCompet edit</h1>
+
+    {{ form_start(edit_form) }}
+        {#{{ form_label(form.anneeDepart) }}#} Année (ex : 2015 - 2016): 
+        {{ form_widget(edit_form.anneeDepart) }}
+        {{ form_errors(edit_form.anneeDepart) }}
+        
+        {{ form_label(edit_form.phase) }}
+        {{ form_widget(edit_form.phase) }}
+        {{ form_errors(edit_form.phase) }}
+        
+       {# {{ form_label(form.numberEquipe) }}#} Nombre d'équipe: 
+        {{ form_widget(edit_form.numberEquipe) }}
+        {{ form_errors(edit_form.numberEquipe) }}
+        
+        {{ form_label(edit_form.visibilite) }}
+        {{ form_widget(edit_form.visibilite) }}
+        {{ form_errors(edit_form.visibilite) }}
+        
+        <div style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+    {{ form_end(edit_form) }}
+
+        <a class="btn btn-primary" href="{{ path('annecompet_index') }}">retour à la liste des années</a>
+
+        {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+            <input class="btn btn-secondary" type="submit" value="Supprimer l'année">
+        {{ form_end(delete_form) }}
+        </div>
+        {% endif %}
+{% endblock %}

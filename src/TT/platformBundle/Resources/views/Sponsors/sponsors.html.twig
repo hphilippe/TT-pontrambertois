@@ -1,0 +1,44 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Sponsors</h1>
+        <div class="box" style="margin-top: 53px;">
+
+            {% for sponsor in sponsors %}
+            <div style="float: none; display: inline-flex;" class="col-xs-18 col-sm-6 col-md-3">
+                <div class="thumbnail">
+                    <img src="{{ asset(sponsor.AssetPath | imagine_filter('sponsor'))  }}" alt="Example" />
+                    <div class="caption">
+                        <h4>{{ sponsor.nom }}</h4>
+                        <p>{{ sponsor.description }}</p>
+                        <p>
+                        {% if sponsor.website != "" %}
+                            <a href="{{ sponsor.website }}" class="btn btn-info btn-xs" role="button">Site internet</a>
+                        {% else %}
+                            <a href="#" class="btn btn-info btn-xs" role="button">Site internet</a>
+                        {% endif %}
+                        {% if sponsor.googleMap != "" %}
+                            <a href="{{ sponsor.googleMap }}" class="btn btn-default btn-xs" role="button">Google map</a>
+                        {% else %}
+                            <a href="#" class="btn btn-default btn-xs" role="button">Google map</a>
+                        {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

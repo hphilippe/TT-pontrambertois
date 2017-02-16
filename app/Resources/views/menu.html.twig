@@ -1,0 +1,128 @@
+<div id="wrapper">
+    <div class="overlay" style="z-index: 10;"></div>
+
+    <!-- Sidebar -->
+    <div class=" nav-side-menu navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <!-- <div class="nav-side-menu"> -->
+        <div class="brand">
+            <img style="margin-top: 6px;" src="{{ 'bundles/ttplatform/images/logoping3.png' | imagine_filter('logoClub') }}" alt="Example" />
+        </div>
+        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                    <a href="{{ path('homepage') }}">
+                        <i class="fa fa-desktop fa-lg"></i> Accueil
+                    </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                    <a href="#"><i class="fa fa-home fa-lg"></i> Club <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a href="{{ path('actualite') }}">Actualités</a></li>
+                    <li><a href="{{ path('bureau') }}">Bureau</a></li>
+                    <li><a href="{{ path('historique') }}">Historique</a></li>
+                    <li><a href="{{ path('reglementClub') }}">Règlements Club</a></li>
+                    <li><a href="{{ path('multimedia') }}">Multimédia</a></li>
+                </ul>
+
+                <li>
+                    <a href="{{ path('inscription') }}">
+                        <i class="fa fa-user fa-lg"></i> Inscription
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="{{ path('entrainement') }}">
+                        <i class="fa fa-users fa-lg"></i> Entrainement
+                    </a>
+                </li>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                    <a href="#"><i class="fa fa-globe fa-lg"></i> Compétition <span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                    <li><a href="{{ path('championnat') }}">Championnats Équipe</a></li>
+                    <li><a href="{{ path('tournois') }}">Tournois</a></li>
+                    <li><a href="{{ path('stages') }}">Stages</a></li>
+                    <li><a href="{{ path('reglementArbitre') }}">Règlements/Arbitrage</a></li>
+                    <li><a href="{{ path('classement') }}">Classements</a></li>
+                </ul>
+
+                <li>
+                    <a href="{{ path('sponsors') }}">
+                        <i class="fa fa-heart fa-lg"></i> Sponsors
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{{ path('contact') }}">
+                        <i class="fa fa-exchange fa-lg"></i> Contact
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=100009823770589" target="_blank">
+                        <i class="fa fa-facebook-square fa-lg"></i> Facebook
+                    </a>
+                </li>
+                
+                {% if is_granted('ROLE_SUPER_ADMIN') %}
+                <li>
+                    <a href="{{ path('administration') }}">
+                        <i class="fa fa-unlock fa-lg"></i> Administration
+                    </a>
+                </li>
+                {% elseif is_granted('ROLE_ADMIN') %}
+                <li>
+                    <a href="{{ path('administration') }}">
+                        <i class="fa fa-unlock fa-lg"></i> Administration
+                    </a>
+                </li>
+                {% elseif is_granted('ROLE_USER') %}
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Utilisateur
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user fa-lg"></i> Visiteur
+                    </a>
+                </li>
+                {% endif %}
+
+                {#<li>
+                  <a href="{{ path('fos_user_security_login') }}">
+                  <a href="#" data-toggle="modal" data-target="#login-modal">
+                  <i class="fa fa-power-off fa-lg"></i> Login
+                  </a>
+                </li>#}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                        <i class="fa fa-wrench fa-lg"></i> {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        <i class="fa fa-sign-out fa-lg"></i> {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                {% else %}
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#login-modal">
+                            <i class="fa fa-power-off fa-lg"></i> Login
+                        </a>
+                    </li>
+                {% endif %}
+                
+            </ul>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->

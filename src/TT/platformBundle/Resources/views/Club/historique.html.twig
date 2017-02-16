@@ -1,0 +1,102 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+ <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+
+        <h1 class="corp-title">CLUB ULR SAINT RAMBERT / PONTRAMBERTOIS</h1>
+        <div class="box">
+
+            <p style="text-align: center; font-size: 25px;" class="corp-description">En voici brièvement l’historique</p>
+                        
+            <p style="text-align: center; color: #5d5d5d;; font-size: 17px; line-height: 27px;">
+                Mon fils pratiquant du basket à l’ULR, après un match l’entraineur m’invite à boire un coup au siège de l’amicale. 
+                Il me fait visiter les locaux, et voit la salle de cinéma qui est à l’état de l’abandon. 
+                Je lui demande s’il ne serait pas possible de la récupérer pour en faire une salle de « ping »
+                <br>
+                Une réunion est organisée avec les instances dirigeantes pour voir si mon projet tien la route.
+                Ils me donnent le feu vert et m’accordent une somme pour exécuter les travaux.
+                <br><br>
+                Création du club début <strong>1984</strong>
+                <br>
+                Section supplémentaire de L’ULR Avec GIDROL Bernard et DELETRAZ René
+                <br>
+                Après d’importants travaux effectués avec l’aide de bénévoles de l’ULR  dans l’ancienne salle de cinéma de Saint Rambert 
+                <span style="font-style: italic;">(Coulé 8m3 de béton, peinture aux murs, éclairage entièrement refait)</span>
+                <br>
+                Bernard Gidrol et moi-même avons amené nos 2 tables en attendant de toucher une subvention de jeunesse et sports
+                <br>
+                C’est grâce à Bernard qui bien introduit à j&S a pu avoir une subvention importante
+                <br>
+                L’hiver, ce n’était pas triste, point de chauffage dans la salle. Pourtant personne ne se plaignait
+                <br>
+                Après quelques années, nous avons fait l’achat d’un poêle à mazout d’occasion qui était au club de SORBIERS 
+                <span style="font-style: italic;">(qui du reste était mon ancien club)</span>
+                <br>
+                À chaque entrainement il fallait remplir avec les jerricans le poêle qui n’avait pas un grand rendement, mais on s’en contentait.
+                <br>
+                4 tables à l’entraînement
+                <br>
+                3 dans la salle et 1 sur la scène
+                <br>
+                1 dans un réduit où il y avait le robot
+                <br>
+                En match, 2 tables
+                <br><br>
+                1er championnat sept 84 avec 2 équipes engagées
+                <br>
+                J’avais recruté 2 pongistes du club de Saint Marcelin
+                <br>
+                La 1ère année, une équipe est montée en D2
+                <br>
+                5 ans après le club a eu une régionale 4
+                <br><br>
+                Auteur : René DELETRAZ
+            </p>
+            
+            <!--<p style="text-align: center;" class="corp-description">Mon fils pratiquant du basket à l’ULR, après un match l’entraineur m’invite à boire un coup au siège de l’amicale. Il me fait visiter les locaux, et voit la salle de cinéma qui est à l’état de l’abandon. Je lui demande s’il ne serait pas possible de la récupérer pour en faire une salle de « ping »</p>
+            <p style="text-align: center;" class="corp-description">Une réunion est organisée avec les instances dirigeantes pour voir si mon projet tien la route.
+                Ils me donnent le feu vert et m’accordent une somme pour exécuter les travaux.</p>
+            <br><br>
+
+            <p style="text-align: center;" class="corp-description">Création du club début <strong>1984</strong></p>
+            <p style="text-align: center;" class="corp-description">Section supplémentaire de L’ULR</p>
+            <p style="text-align: center;" class="corp-description">Avec</p>
+            <p style="text-align: center;" class="corp-description">GIDROL Bernard et DELETRAZ René</p>
+            <p style="text-align: center;" class="corp-description"> </p><br>
+            <p style="text-align: center;" class="corp-description">Après d’importants travaux effectués avec l’aide de bénévoles de l’ULR  dans l’ancienne salle de cinéma de Saint Rambert</p>
+            <p style="text-align: center;" class="corp-description">(Coulé 8m3 de béton, peinture aux murs, éclairage entièrement refait)</p>
+            <p style="text-align: center;" class="corp-description"> </p><br>
+            <p style="text-align: center;" class="corp-description">Bernard Gidrol et moi-même avons amené nos 2 tables en attendant de toucher une subvention de jeunesse et sports</p>
+            <p style="text-align: center;" class="corp-description"> </p><br>
+            <p style="text-align: center;" class="corp-description">C’est grâce à Bernard qui bien introduit à j&S  a pu avoir une subvention importante</p>
+            <p style="text-align: center;" class="corp-description"> </p><br>
+            <p style="text-align: center;" class="corp-description">L’hiver, ce n’était pas triste, point de chauffage dans la salle. Pourtant personne ne se plaignait</p>
+            <p style="text-align: center;" class="corp-description"> </p><br>
+            <p style="text-align: center;" class="corp-description">Après quelques années, nous avons fait l’achat d’un poêle à mazout d’occasion qui était au club de SORBIERS (qui du reste était mon ancien club)</p>
+            <p style="text-align: center;" class="corp-description">À chaque entrainement il fallait remplir avec les jerricans le poêle qui n’avait pas un grand rendement, mais on s’en contentait.</p>
+            <p style="text-align: center;" class="corp-description">4 tables à l’entraînement</p>
+            <p style="text-align: center;" class="corp-description">3 dans la salle et 1 sur la scène</p>
+            <p style="text-align: center;" class="corp-description">1 dans un réduit où il y avait le robot</p>
+            <p style="text-align: center;" class="corp-description">En match, 2 tables</p>
+
+            <br><br>
+            <p style="text-align: center;" class="corp-description">1er championnat sept 84 avec 2 équipes engagées</p>
+            <p style="text-align: center;" class="corp-description">J’avais recruté 2 pongistes du club de Saint Marcelin</p>
+            <p style="text-align: center;" class="corp-description">La 1ère année, une équipe est montée en D2</p>
+            <p style="text-align: center;" class="corp-description">5 ans après le club a eu une régionale 4</p>
+            <br>
+            <p style="text-align: center;" class="corp-description">Auteur : René DELETRAZ</p>-->
+
+        </div>
+    </div>
+
+{% endblock %}

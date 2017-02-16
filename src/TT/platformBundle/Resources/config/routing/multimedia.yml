@@ -1,0 +1,24 @@
+adminMultimedia_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:Multimedia:index" }
+    methods:  GET
+
+adminMultimedia_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:Multimedia:show" }
+    methods:  GET
+
+adminMultimedia_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:Multimedia:new" }
+    methods:  [GET, POST]
+
+adminMultimedia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:Multimedia:edit" }
+    methods:  [GET, POST]
+
+adminMultimedia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:Multimedia:delete" }
+    methods:  DELETE

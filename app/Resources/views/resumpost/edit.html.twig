@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Éditer le résumé du match</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        
+         <div style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Mettre à jour" />
+    {{ form_end(edit_form) }}
+
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a class="btn btn-primary" href="{{ path('resumpost_index') }}">Retour à la liste des résumés</a>
+    {% endif %}
+        <a class="btn btn-primary" href="{{ path('adminResumMatch') }}">Retour à l'administration du tableau</a>
+
+        
+        {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+            <input class="btn btn-secondary" type="submit" value="Supprimer le résumé">
+        {{ form_end(delete_form) }}
+        
+         </div>
+    <script>
+        var CKEDITOR_BASEPATH = '/ttpontrambertois/web/bundles/ttplatform/ckeditor/';
+    </script>
+{% endblock %}

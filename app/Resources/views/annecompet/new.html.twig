@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+    <h1>anneCompet creation</h1>
+
+    {{ form_start(form) }}
+        
+        {#{{ form_label(form.anneeDepart) }}#} Année (ex : 2015 - 2016): 
+        {{ form_widget(form.anneeDepart) }}
+        {{ form_errors(form.anneeDepart) }}
+        
+        {{ form_label(form.phase) }}
+        {{ form_widget(form.phase) }}
+        {{ form_errors(form.phase) }}
+        
+       {# {{ form_label(form.numberEquipe) }}#} Nombre d'équipe: 
+        {{ form_widget(form.numberEquipe) }}
+        {{ form_errors(form.numberEquipe) }}
+        
+        {{ form_label(form.visibilite) }}
+        {{ form_widget(form.visibilite) }}
+        {{ form_errors(form.visibilite) }}
+        
+        <div  style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Créer l'année" />
+    {{ form_end(form) }}
+
+
+    <a class="btn btn-primary" href="{{ path('annecompet_index') }}">retour à la liste des années</a>
+        </div>
+    {% endif %}
+{% endblock %}

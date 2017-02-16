@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}TT Pontrambertois{% endblock %}</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=0.45">
+        {% block stylesheets %}
+            {% stylesheets filter='cssrewrite, ?scssphp'
+            'bundles/ttplatform/css/style.css' 
+            'bundles/utilisateurs/css/styleUser.css'
+            'bundles/ttplatform/css/blueimp-gallery.min.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+            {% endstylesheets %}
+        {% endblock %}
+        {#<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />#}
+        <link rel="icon" type="image/png" href={{ asset('bundles/ttplatform/images/photo2.png') }} />
+    </head>
+    <body>
+    
+
+          {% include '::menu.html.twig' %}
+
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <div class="page-content-header">
+                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                    <span class="hamb-top"></span>
+                    <span class="hamb-middle"></span>
+                    <span class="hamb-bottom"></span>
+                    <p class="hamb-title" style="margin-left: 40px; margin-top: 4px;">Menu</p>
+                </button>
+                <p class="title-ttpontrambertois">TT PONTRAMBERTOIS</p>
+                </div>
+
+                {% block body %}{% endblock %}
+                {% include '::log.html.twig' %}
+
+            </div>
+            <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->   
+
+    <div style="margin:30px;"></div> <!-- espace comme le footer est en pos fixe-->
+    <footer>
+      <div class="container" style="margin-bottom:0px;">
+        <p class="text-muted"> Copyright © 2016 tt-pontrambertois.fr All Rights Reserved - Mail : corresttpr@gmail.com - Conception / Design : Huynh Philippe</p>
+      </div>
+    </footer>
+    
+    {% block javascripts %}
+    {% javascripts 
+    '@TTplatformBundle/Resources/public/js/menu.js' filter='?jsqueeze' 
+    '@UtilisateursBundle/Resources/public/js/log.js' filter='?jsqueeze' 
+    '@TTplatformBundle/Resources/public/js/blueimp-gallery.min.js' filter='?jsqueeze' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+        <script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
+    {% endblock %}
+
+    </body>
+</html>

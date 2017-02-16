@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>anneCompet</h1>
+ <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anneCompet.id }}</td>
+            </tr>
+            <tr>
+                <th>Anneedepart</th>
+                <td>{{ anneCompet.anneeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ anneCompet.phase }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'équipe</th>
+                <th>{{ anneCompet.numberEquipe }}</th>
+            </tr>
+            <tr>
+                <th>visibilité</th>
+                <th>{{ anneCompet.visibilite }}</th>
+            </tr>
+        </tbody>
+    </table>
+ </div>
+            <div style="margin: 10px 20px;">
+                
+            <a class="btn btn-primary" href="{{ path('annecompet_index') }}">retour à la liste des années</a>
+
+            <a class="btn btn-primary" href="{{ path('annecompet_edit', { 'id': anneCompet.id }) }}">Éditer le contenue</a>
+
+            {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+                <input class="btn btn-secondary" type="submit" value="supprimer le contenue">
+            {{ form_end(delete_form) }}
+            
+            </div>
+{% endblock %}

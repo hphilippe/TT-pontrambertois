@@ -1,0 +1,52 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Les différents dirigeants du Club </h1>
+        <div class="box">
+            <!-- <p class="corp-description">Membre d’honneur :</p>-->
+
+            <p class="corp-sous-title">Membres du bureau</p>
+            <div class="list-users">
+                
+                {% for bureau in bureaus %}
+                    {% if bureau.categorie == "bureau" %}
+                        <div class="user">
+                            <img src="{{ asset(bureau.AssetPath | imagine_filter('avatar')) }}" alt="{{ bureau.nom }}" />
+                            <p>{{ bureau.poste }}</p>
+                            <p>{{ bureau.nom }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                
+            </div>    
+               
+            <p class="corp-sous-title">Entraineurs</p>
+
+            <div class="list-users">
+                
+                {% for bureau in bureaus %}
+                    {% if bureau.categorie == "entraineurs" %}
+                        <div class="user">
+                            <img src="{{ asset(bureau.AssetPath | imagine_filter('avatar')) }}" alt="{{ bureau.nom }}" />
+                            <p>{{ bureau.poste }}</p>
+                            <p>{{ bureau.nom }}</p>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

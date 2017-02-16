@@ -1,0 +1,96 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+
+        <h1 class="corp-title">Planning des séances d'entraînement</h1>
+        <div class="box">
+            <p class="corp-description" style="margin-left: 100px;">Créneaux des séances dirigées (septembre à juin et hors congés scolaires) :</p>
+            <p class="corp-description">Les séances reprendront à partir de, début septembre</p>
+
+            <div class="table-responsive">
+                <table class="arrange table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Mardi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                19h - 20h30
+                            </td>
+                            <td>
+                                Loisirs adultes : dirigé par Clément, Antoine et Jeannot.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="arrange table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Mercredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                16h - 17h30
+                            </td>
+                            <td>
+                                Loisirs enfants : dirigé par Sardat Nicolas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                17h30 - 19h30
+                            </td>
+                            <td>
+                                Confirmés enfants : dirigé par Sardat Nicolas
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                19h30 - 21h
+                            </td>
+                            <td>
+                                Adultes compétition : dirigé par Sardat Nicolas
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="arrange table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Heure</th>
+                            <th>Vendredi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                17h30 - 20h30
+                            </td>
+                            <td>
+                                Séance libre, tout niveau
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

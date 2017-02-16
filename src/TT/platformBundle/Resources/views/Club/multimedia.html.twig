@@ -1,0 +1,115 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Multimédia</h1>
+        <div class="box">
+            
+            <!--<p class="corp-sous-title">Photos 2016</p>
+            <div class="list_button">
+                <button type="button" class="btn btn-default">tournois st just st rambert</button>
+                <button type="button" class="btn btn-default">championnat janvier</button>
+            </div>-->
+            
+            <!-- The container for the list of example images -->
+            <!--<div id="links" class="links"></div>-->
+            
+            <!-- example -->
+            <!--<div id="links">
+                <a href="images/banana.jpg" title="Banana">
+                    <img src="images/thumbnails/banana.jpg" alt="Banana">
+                </a>
+                <a href="images/apple.jpg" title="Apple">
+                    <img src="images/thumbnails/apple.jpg" alt="Apple">
+                </a>
+                <a href="images/orange.jpg" title="Orange">
+                    <img src="images/thumbnails/orange.jpg" alt="Orange">
+                </a>
+            </div>-->
+            
+            
+            <div id="links">
+                <p class="corp-sous-title">Tournoi fin de saison jeunes 2015</p>
+                <a href="{{ asset('bundles/ttplatform/images/ttp2.jpg') }}" title="ttp2" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp2.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp2" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp3.jpg') }}" title="ttp3" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp3.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp3" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp4.jpg') }}" title="ttp4" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp4.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp4" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp5.jpg') }}" title="ttp5" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp5.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp5" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp6.jpg') }}" title="ttp6" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp6.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp6" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp7.jpg') }}" title="ttp7" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp7.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp7" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp8.jpg') }}" title="ttp8" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp8" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp9.jpg') }}" title="ttp9" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp9.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp9" />
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/ttp10.jpg') }}" title="ttp10" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp10.jpg' | imagine_filter('multimediaThumbnail') }}" alt="ttp10" />
+                </a>
+                
+                <p class="corp-sous-title">Autres</p>
+                <a href="{{ asset('bundles/ttplatform/images/ttp1.jpg') }}" title="ttp1" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/ttp1.jpg' | imagine_filter('multimediaThumbnail') }}"/>
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/tt_autre1.jpg') }}" title="tt_autre1" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/tt_autre1.jpg' | imagine_filter('multimediaThumbnail') }}"/>
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/tt_autre2.jpg') }}" title="tt_autre2" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/tt_autre2.jpg' | imagine_filter('multimediaThumbnail') }}"/>
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/tt_autre3.jpg') }}" title="tt_autre3" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/tt_autre3.jpg' | imagine_filter('multimediaThumbnail') }}"/>
+                </a>
+                <a href="{{ asset('bundles/ttplatform/images/tt_autre4.jpg') }}" title="tt_autre4" data-gallery="">
+                    <img src="{{ 'bundles/ttplatform/images/tt_autre4.jpg' | imagine_filter('multimediaThumbnail') }}"/>
+                </a>
+                
+            </div>
+            
+            <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+            <div id="blueimp-gallery" class="blueimp-gallery">
+                <div class="slides"></div>
+                <h3 class="title"></h3>
+                <a class="prev">‹</a>
+                <a class="next">›</a>
+                <a class="close">×</a>
+                <a class="play-pause"></a>
+                <ol class="indicator"></ol>
+            </div>
+            
+        </div>
+    </div>
+            
+    <script>
+    document.getElementById('links').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = {index: link, event: event},
+            links = this.getElementsByTagName('a');
+        blueimp.Gallery(links, options);
+    };
+    
+    </script>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+     <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Fiche et renseignement sur l'inscription</h1>
+        <div class="box">
+            <p class="corp-description" style="margin-left: 100px;">En téléchargement ci-dessous le formulaire de demande de licence. (cliquez sur le formulaire)</p>
+            <p class="corp-description">À remplir et donner directement en main propre à la salle ou, à scanner et à envoyer à <strong>corresttpr@gmail.com</strong>.</p>
+            <!--<a href={{ asset('bundles/ttplatform/images/bordereau_de_demande_de_licence_2015_-_2016.pdf') }}><img style="width: 189px; height: 270px; margin: 5px; margin-left: 38%;" src= {{ asset('bundles/ttplatform/images/bordereau.png') }} alt="Facebook" /></a>-->
+            {% for inscription in inscriptions %}
+                {% if inscription.categorie == "bordereau" %}
+                    <td>
+                        <a href="{{ asset(inscription.AssetPath) }}" target="_blank"><img style="width: 189px; height: 270px; margin: 5px; margin-left: 38%;" src= {{ asset('bundles/ttplatform/images/bordereau.png') }} alt="Facebook" /></a>
+                    </td>
+                {% endif %}
+            {% endfor %}
+            {#<a href="http://www.fftt.com/doc/administratif/16-2-licence.pdf" target="_blank"><img style="width: 189px; height: 270px; margin: 5px; margin-left: 38%;" src= {{ asset('bundles/ttplatform/images/bordereau.png') }} alt="Facebook" /></a>#}
+            <p class="corp-description">Tarif des licences du club : </p>
+            <p class="corp-description">Les réductions par <strong>carte M'ra et coupon sport(ancv)</strong> sont accepté </p>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nbr de personnes :</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Tarif :
+                            </td>
+                            {% for inscription in inscriptions %}
+                                {% if inscription.categorie == "prix" %}
+                                    <td>
+                                        {{ inscription.prix }}€
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
+                            {#<td>
+                                90€
+                            </td>
+                            <td>
+                                166€
+                            </td>
+                            <td>
+                                244€
+                            </td>
+                            <td>
+                                322€
+                            </td>#}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

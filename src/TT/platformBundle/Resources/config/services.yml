@@ -1,0 +1,4 @@
+services:
+#    t_tplatform.example:
+#        class: TT\platformBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

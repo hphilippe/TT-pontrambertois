@@ -1,0 +1,17 @@
+<div  class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <div class="login-box">
+                <div class="lb-header">
+                    <a href="#" class="active" id="login-box-link">Se connecter</a>
+                    <a href="#" id="signup-box-link">Enregistrement</a>
+                </div>
+
+                {{ render(controller('FOSUserBundle:Security:login')) }}
+                
+                {{ render(controller('FOSUserBundle:Registration:register')) }}
+
+            </div>
+        </div>
+    </div>
+</div>

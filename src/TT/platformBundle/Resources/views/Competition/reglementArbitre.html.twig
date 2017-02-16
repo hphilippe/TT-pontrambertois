@@ -1,0 +1,52 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+     <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Règlement et Arbitrage </h1>
+        <div class="box">
+
+
+            <p class="corp-sous-title">Règlements du Tennis de Table en compétition</p>
+            <div class="list_button">
+                <a href="http://www.fftt.com/reglements/reglements_sportifs_2014.pdf" target="_blank" class="btn btn-default">Règlements sportifs</a>
+                <a href="http://lratt.fr/attachments/article/2231/LARC_2016A.pdf" target="_blank" class="btn btn-default">Revêtements autorisés</a>
+            </div>
+            
+            <p class="corp-sous-title">Arbitrage / Juge-Arbitrage</p>
+            
+            <p class="corp-description">Nous avons constamment besoin de nouveaux Arbitres et Juges-Arbitres au sein de notre club. Si vous souhaitez devenir Arbitre ou Juge-Arbitre et ainsi aider le club en officiant pour certaines rencontres, veuillez nous contacter par mail à <strong>corresttpr@gmail.com</strong>. Les coûts de formation seront pris en charge intégralement par le club.</p>
+                <p class="corp-description">La formation se déroule en plusieurs étapes : une formation théorique (durant une journée) suivie par la suite d'un examen théorique (Question à Choix Multiples) et également d'un examen pratique (arbitrage d'une rencontre de Championnat).</p>
+                <p class="corp-description">Plusieurs niveaux sont possibles : </p>
+                <p class="corp-description"><strong>- </strong>Arbitre de Club (AC) : pour arbitrer les rencontres de Nationale du Championnat de France par équipes</p>
+                <p class="corp-description"><strong>- </strong>Arbitre Régional (AR) : pour arbitrer les parties des différentes compétitions officielles individuelles ou par équipes (Championnat de France par équipes)</p>
+                <p class="corp-description"><strong>- </strong>Juge-Arbitre par équipes (JA1) : pour juge-arbitrer les rencontres de Nationale du Championnat de France par équipes (avoir déjà le grade d'AR au préalable)</p>
+                <p class="corp-description"><strong>Pour chaque équipe évoluant au niveau National et Régional, un Juge-Arbitre (JA1) est nécessaire avec au minimum 7 prestations par saison (sous peine d'amende de la FFTT).</strong></p>
+                <p class="corp-description"><strong>Les équipes évoluant au niveau National ont pour obligation de présenter 2 arbitres officiels (AC et/ou AR) pour chaque rencontre à domicile, sous peine d'amende de la FFTT.</strong></p>
+                <p class="corp-description"><a href="http://www.ping92.com/tous-les-documents/285-guide-des-formations-20142015arbitrage" target="_blank" class="btn btn-default">Guide des formations</a></p>
+                <p class="corp-description">Liste des Juges-Arbitres du Club :</p>
+                <ul class="corp-description">
+                    <li>Clément Tabard</li>
+                    <li>Schamberger Patrice</li>
+                    <li>Mineau Patrick</li>
+                    <li>Sofia Didier</li>
+                    <li>Louat Lylian</li>
+                    <li>Huynh Philippe</li>
+                </ul>
+                <p class="corp-description">Liste des Juges-Arbitres du Club inscrit pour une formation, cette année:</p>
+                <ul class="corp-description">
+                    
+                </ul>
+            
+        </div>
+    </div>
+
+{% endblock %}

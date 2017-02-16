@@ -1,0 +1,24 @@
+resumpost_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:ResumPost:index" }
+    methods:  GET
+
+resumpost_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:ResumPost:show" }
+    methods:  GET
+
+resumpost_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:ResumPost:new" }
+    methods:  [GET, POST]
+
+resumpost_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:ResumPost:edit" }
+    methods:  [GET, POST]
+
+resumpost_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:ResumPost:delete" }
+    methods:  DELETE

@@ -1,0 +1,91 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Actualités </h1>
+        <div class="box" style="margin-top: 39px;">
+           
+            {% for blogPost in blogPosts %}
+                <div>
+                    <div class="contenue_titre_article">
+                    <h2 class="titre_article" id="article{{ blogPost.id }}">{{ blogPost.title }}</h2>
+                    <div class="info_article">
+                    <i>par {{ blogPost.author }} le {% if blogPost.createdAt %}{{ blogPost.createdAt|date('Y-m-d H:i:s') }}{% endif %}</i>
+                    </div>
+                    </div>
+                    <div class="well2">
+                        {{ blogPost.content|raw }}
+                    </div>
+                    <div class="sectionCommentaire panel panel-primary">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-comment"></span>
+                            Comments
+                        </div>
+                    {% for blogComment in blogComments %}
+                        {% if blogComment.post == blogPost.id %}
+                            <div class="commentaire panel-body body-panel">
+                            <i>par {{ blogComment.author }} le {% if blogComment.createdAt %}{{ blogComment.createdAt|date('Y-m-d H:i:s') }}{% endif %}</i>
+                            <div class="ComContent">
+                                {{ blogComment.content|raw }}
+                            </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                
+                    {% if is_granted('ROLE_USER') %}
+                    <div class="commentaireForm panel-footer clearfix">
+                        {{ form_start(form) }}
+                        
+                        <div style="display: block">
+                        {{ form_label(form.author) }}
+                        {{ form_errors(form.author) }}
+                        </div>
+                        <div style="background-color: #fff">
+                            {% if app.user.username is defined %}
+                                {{ form_widget(form.author, {'attr': {'class': 'form-control','value' : app.user.username, 'readonly':'readonly'} }) }}
+                            {% else %}
+                                {{ form_widget(form.author, {'attr': {'class': 'form-control'} }) }}
+                            {% endif %}
+                        </div>
+                        
+                         <div style="display: block">
+                        {{ form_label(form.content) }}
+                        {{ form_errors(form.content) }}
+                        </div>
+                        {{ form_widget(form.content) }}
+
+                        <div style="display:none">
+                            {{ form_widget(form.post, {'value' : blogPost.id}) }}
+                        </div>
+                        <span style="margin-top: 10px;" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12">
+                        <input class="btn btn-success btn-lg btn-block" type="submit" value="Create" />
+                        </span>
+                        {{ form_end(form) }}
+                    </div>
+                    {% endif %}
+                    </div>
+            
+                </div>
+            {% endfor %}
+             
+            {# display navigation #}
+            <div class="navigation">
+                {{ knp_pagination_render(blogPosts) }}
+            </div>
+
+        </div>
+    </div>
+
+<script>
+     var CKEDITOR_BASEPATH = '/ttpontrambertois/web/bundles/ttplatform/ckeditor/';
+</script>
+{% endblock %}

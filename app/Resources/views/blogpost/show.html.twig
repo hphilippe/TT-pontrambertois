@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Article</h1>
+    <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ blogPost.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ blogPost.content|raw }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if blogPost.createdAt %}{{ blogPost.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ blogPost.id }}</td>
+            </tr>
+            <tr>
+                <th>auteur</th>
+                <td>{{ blogPost.author }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+
+        {% if is_granted('ROLE_ADMIN') %}   
+            <div style="margin: 10px 20px;">
+                
+            <a class="btn btn-primary" style="color: white;text-decoration: none;" href="{{ path('blogpost_index') }}">retour à la liste de tous les articles</a>
+
+            <a class="btn btn-success" style="color: white;text-decoration: none;" href="{{ path('blogpost_edit', { 'id': blogPost.id }) }}">Editer l'article</a>
+
+
+            {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+                <input class="btn btn-secondary" type="submit" value="Supprimer le contenue">
+            {{ form_end(delete_form) }}
+            </div>
+        {% endif %}
+
+{% endblock %}

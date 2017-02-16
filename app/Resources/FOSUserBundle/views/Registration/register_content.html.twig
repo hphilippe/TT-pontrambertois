@@ -1,0 +1,42 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'email-signup'}}) }}
+    <div style="display:none" class="social-login">
+        <a href="http://www.tt-pontrambertois.fr/connect/facebook">
+            <i class="fa fa-facebook fa-lg"></i>
+            Inscription par FB
+        </a>
+        <a href="http://www.tt-pontrambertois.fr/connect/google">
+            <i class="fa fa-google-plus fa-lg"></i>
+            Inscription par Google
+        </a>
+    </div>
+
+    <div class="u-form-group">
+        {{ form_errors(form.email) }}
+        {{ form_widget(form.email, { 'attr': {'placeholder': 'Email'} }) }}
+    </div>
+    <div class="u-form-group">
+        {{ form_errors(form.username) }}
+        {{ form_widget(form.username, { 'attr': {'placeholder': 'Pseudo'} }) }}
+    </div>
+    <div class="u-form-group">
+        {{ form_errors(form.nom) }}
+        {{ form_widget(form.nom, { 'attr': {'placeholder': 'nom'} }) }}
+    </div>
+    <div class="u-form-group">
+        {{ form_errors(form.prenom) }}
+        {{ form_widget(form.prenom, { 'attr': {'placeholder': 'prenom'} }) }}
+    </div>
+    <div class="u-form-group">
+        {{ form_widget(form.plainPassword.first, { 'attr': {'placeholder': 'Mot de passe'} }) }}
+        {{ form_errors(form.plainPassword.first, { 'attr': {'placeholder': 'Mot de passe'} }) }}
+    </div>
+    <div class="u-form-group">
+        {{ form_widget(form.plainPassword.second, { 'attr': {'placeholder': 'Retaper le Mot de passe'} }) }}
+        {{ form_errors(form.plainPassword.second, { 'attr': {'placeholder': 'Retaper le Mot de passe'} }) }}
+    </div>
+    <div class="u-form-group">
+        <input class="button" type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}

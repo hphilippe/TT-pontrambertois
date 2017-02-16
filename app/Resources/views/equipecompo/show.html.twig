@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>EquipeCompo</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ equipeCompo.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomequipe</th>
+                <td>{{ equipeCompo.nomEquipe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+ <div style="margin: 10px 20px;">
+    <a class="btn btn-primary" href="{{ path('equipecompo_index') }}">Retour à la liste des équipes</a>
+
+    <a class="btn btn-primary" href="{{ path('equipecompo_edit', { 'id': equipeCompo.id }) }}">Editer le contenue</a>
+
+    {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+        <input class="btn btn-secondary" type="submit" value="supprimer le contenue">
+    {{ form_end(delete_form) }}
+ </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if is_granted('ROLE_ADMIN') %}   
+        <h1>creation d'un commentaire</h1>
+
+        {{ form_start(form) }}
+        {{ form_label(form.author) }}
+        {{ form_widget(form.author, {'value' : app.user.username}) }}
+        {{ form_errors(form.author) }}
+
+        <div style="display: block">
+            {{ form_label(form.content) }}
+            {{ form_errors(form.content) }}
+        </div>
+        {{ form_widget(form.content) }}
+
+        <div style="display: block">
+            ratacher le commentaire à l'article d'ID
+            {#{{ form_label(form.post) }}#}
+            {{ form_errors(form.post) }}
+            {{ form_widget(form.post) }}
+        </div>
+       
+        {% if is_granted('ROLE_ADMIN') %}  
+            
+    <div style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Créer le contenue" />
+
+        {{ form_end(form) }}
+         {% endif %}
+    {% endif %}
+
+    
+        <a class="btn btn-primary" style="color: white;text-decoration: none;" href="{{ path('blogcomment_index') }}">retour à la liste de tous les commentaires</a>
+        <a class="btn btn-primary" style="color: white;text-decoration: none;" href="{{ path('blogpost_index') }}" target="_blank">Accès à la liste de tous les articles</a>
+    </div>
+        
+       
+    
+    <script>
+        var CKEDITOR_BASEPATH = '/ttpontrambertois/web/bundles/ttplatform/ckeditor/';
+    </script>
+{% endblock %}

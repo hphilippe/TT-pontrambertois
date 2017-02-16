@@ -1,0 +1,588 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+     <div class="page-content-slidder">
+        <img src="{{ 'bundles/ttplatform/images/ttp8.jpg' | imagine_filter('sectionThumb') }}" alt="Example" />
+    </div>
+
+    <div class="container">
+        <div class="page-content-logo">
+            <a href="#">
+                <img src="{{ 'bundles/ttplatform/images/raquette.png' | imagine_filter('raquetteLogo') }}" alt="Example" />
+            </a>
+        </div>
+        <h1 class="corp-title">Classement des joueurs et Calcul de points</h1>
+        <div class="box">
+            
+            <p class="corp-sous-title">Applications</p>
+            <div class="list_button">
+                <a href="http://www.pingpocket.fr/" target="_blank" class="btn btn-default">Visualisation en ligne (score des matchs, joueurs...) : Ping Pocket</a>
+                <a href="https://play.google.com/store/apps/details?id=com.fftt.smartping&hl=fr" target="_blank" class="btn btn-default">smartphone : Smartping</a>
+                <a href="https://play.google.com/store/apps/details?id=com.fftt.fftt" target="_blank" class="btn btn-default">smartphone : FFTT</a>
+            </div>
+
+            <p class="corp-sous-title">Calcul de point</p>
+            <p>Tableau des gains et pertes de point lors des match de compétition
+            Les joueurs débutants commencent avec 500 points</p>
+            
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Écart de points
+                            </td>
+                            <td>
+                                Victoires normales
+                            </td>
+                            <td>
+                                Defaites normales
+                            </td>
+                            <td>
+                                Victoires anormales
+                            </td>
+                            <td>
+                                Defaites anormales
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                0 - 24
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                -5
+                            </td>
+                            <td>
+                                6
+                            </td>
+                            <td>
+                                -5
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                25 - 49
+                            </td>
+                            <td>
+                                5.5
+                            </td>
+                            <td>
+                                -4.5
+                            </td>
+                            <td>
+                                7
+                            </td>
+                            <td>
+                                -6
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                50 - 99
+                            </td>
+                            <td>
+                                5
+                            </td>
+                            <td>
+                                -4
+                            </td>
+                            <td>
+                                8
+                            </td>
+                            <td>
+                                -7
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                100 - 149
+                            </td>
+                            <td>
+                                4
+                            </td>
+                            <td>
+                                -3
+                            </td>
+                            <td>
+                                10
+                            </td>
+                            <td>
+                                -8
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                150 - 199
+                            </td>
+                            <td>
+                                3
+                            </td>
+                            <td>
+                                -2
+                            </td>
+                            <td>
+                                13
+                            </td>
+                            <td>
+                                -10
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                200 - 299
+                            </td>
+                            <td>
+                                2
+                            </td>
+                            <td>
+                                -1
+                            </td>
+                            <td>
+                                17
+                            </td>
+                            <td>
+                                -12.5
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                300 - 399
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td>
+                                -0.5
+                            </td>
+                            <td>
+                                22
+                            </td>
+                            <td>
+                                -16
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                400 - 499
+                            </td>
+                            <td>
+                                0.5
+                            </td>
+                            <td>
+                                0
+                            </td>
+                            <td>
+                                28
+                            </td>
+                            <td>
+                                -20
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                500 +
+                            </td>
+                            <td>
+                                0
+                            </td>
+                            <td>
+                                0
+                            </td>
+                            <td>
+                                40
+                            </td>
+                            <td>
+                                -29
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>Victoires Normales : victoire contre un joueur ayant autant ou moins de points que vous.<br>
+            Victoire Anormales : victoire contre un joueur ayant plus de points que vous.<br>
+            Défaites normales : défaite contre un joueur ayant autant ou plus de points que vous.<br>
+            Défaites anormales : défaite contre un joueur ayant moins de points que vous.</p>
+            
+            <p class="corp-sous-title">Classements des joueurs du club</p>
+            
+            <div>
+            <ul class="edgetoedge" style="margin-top:-1em; margin-bottom:-1em">
+                <li class="sep">
+                    <p><span>12</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/425421?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>GOUTTEBROZE Stephane
+                    </a>
+                    <small class="counter">1255</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4215909?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LOUAT Lylian
+                    </a>
+                    <small class="counter">1244</small>
+                </li>
+                <li class="sep">
+                    <p><span>11</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/429764?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BOUCHET Frederic
+                    </a>
+                    <small class="counter">1167</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4211226?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>THOLOT Antoine
+                    </a>
+                    <small class="counter">1154</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4212762?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>HUYNH Philippe
+                    </a>
+                    <small class="counter">1137</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4216595?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SAUVAGE Jean-luc
+                    </a>
+                    <small class="counter">1118</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4210094?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BARBIER Jean andre
+                    </a>
+                    <small class="counter">1111</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4214261?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SCHAMBERGER Patrice
+                    </a>
+                    <small class="counter">1101</small>
+                </li>
+                <li class="sep">
+                    <p><span>10</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/4211893?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>TABARD Clement
+                    </a>
+                    <small class="counter">1046</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/429584?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>MAWET Gauthier
+                    </a>
+                    <small class="counter">1039</small>
+                </li>
+                <li class="sep">
+                    <p><span>9</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/428066?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>PAOLACCI Jean-luc
+                    </a>
+                    <small class="counter">946</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4212463?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>MINEAU Patrick
+                    </a>
+                    <small class="counter">942</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217205?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>PICHON Philippe
+                    </a>
+                    <small class="counter">939</small>
+                </li>
+                <li class="sep">
+                    <p><span>8</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/6919904?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>TORTA Benjamin
+                    </a>
+                    <small class="counter">838</small>
+                </li>
+                <li class="sep">
+                    <p><span>7</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/421225?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>DELETRAZ Rene
+                    </a>
+                    <small class="counter">796</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/3338146?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>TEIXIDOR Rémi
+                    </a>
+                    <small class="counter">754</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4216182?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LOUAT Laurent
+                    </a>
+                    <small class="counter">722</small>
+                </li>
+                <li class="sep">
+                    <p><span>6</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/4217549?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>JACOB Julien
+                    </a>
+                    <small class="counter">663</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4214783?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SOFIA Didier
+                    </a>
+                    <small class="counter">635</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/427455?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>CHAPOT Jean-marc
+                    </a>
+                    <small class="counter">628</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4215456?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>GRILLET Alexandre
+                    </a>
+                    <small class="counter">606</small>
+                </li>
+                <li class="sep">
+                    <p><span>5</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/426680?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>GOUTTEBROZE Gerard
+                    </a>
+                    <small class="counter">587</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218071?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>ALBRECHT Gaëtan
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218300?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>ANTOINE Théo
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218076?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>CLAYETTE Hector
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218072?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>JACQUIN Louis
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217708?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LOUAT Larry
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4215455?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>FAVREAU Christophe
+                    </a>
+                    <small class="counter">500</small>
+                </li>
+                <li class="sep">
+                    <p><span>Promotions</span><span></span></p>
+                </li><li class="arrow">
+                    <a href="/app/fftt/licencies/4217621?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>ARMAND Aymeric
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217622?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BEAL Mathéo
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4215895?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BEYSSON Christophe
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4215896?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BEYSSON Mickaël
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217812?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BOUCHUT Alexis
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218116?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>BOUDRIE Sacha
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4211897?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>CALVENTUS Joseph
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218101?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>CALVENTUS Léo
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218157?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>CHARLES Gwenaël
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218638?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>DESPINASSE Tom
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4216430?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>DJOUHARA Theo
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218637?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>FOUVET Romain
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218103?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-female fa-lg"></i>GRILLET Abigaelle
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218579?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>GUILLARD Alexis
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218640?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LABALME Clément
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218117?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LAXTON Antoine
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218639?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>LY Harold
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218026?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>MACABIES Samuel
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217811?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>MERLEY Audric
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218049?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>PETREQUIN Florent
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218346?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>PHILIPPON Guillaume
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217084?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>PIRON Corentin
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217679?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>RECORBET Killian
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217678?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>RECORBET Matis
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218158?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>ROBERT Cédric
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4217620?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SAUVAJON Alexandre
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218102?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SCHULZ Ronny
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218302?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SEGOUIN François
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+                <li class="arrow">
+                    <a href="/app/fftt/licencies/4218301?CLUB_ID=01420160" class="ga">
+                        <i class="fa fa-male fa-lg"></i>SEGOUIN Thimothé
+                    </a>
+                    <small class="counter">P</small>
+                </li>
+            </ul>
+            </div>
+            
+        </div>
+    </div>
+
+<script>
+  $('.arrow a').click(function(){
+    var link = $(this).attr('href');
+    //alert($(this).attr('href'));
+    window.open('http://www.pingpocket.fr'+link, '_blank');
+    return false;
+  });
+</script>
+{% endblock %}

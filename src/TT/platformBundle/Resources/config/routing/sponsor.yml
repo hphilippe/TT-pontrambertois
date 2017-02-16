@@ -1,0 +1,24 @@
+sponsor_index:
+    path:     /
+    defaults: { _controller: "TTplatformBundle:Sponsor:index" }
+    methods:  GET
+
+sponsor_show:
+    path:     /{id}/show
+    defaults: { _controller: "TTplatformBundle:Sponsor:show" }
+    methods:  GET
+
+sponsor_new:
+    path:     /new
+    defaults: { _controller: "TTplatformBundle:Sponsor:new" }
+    methods:  [GET, POST]
+
+sponsor_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TTplatformBundle:Sponsor:edit" }
+    methods:  [GET, POST]
+
+sponsor_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TTplatformBundle:Sponsor:delete" }
+    methods:  DELETE

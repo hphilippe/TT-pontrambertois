@@ -1,0 +1,63 @@
+<div class="offer offer-radius offer-primary">
+	<div class="shape">
+		<div class="shape-text">
+			Compétition								
+		</div>
+	</div>
+	<div class="offer-content">
+		<h3 class="lead">
+			Compétition par Équipe
+		</h3>						
+		<p>
+			le 9 septembre 2016
+			venir avec vos raquettes
+		</p>
+	</div>
+</div>
+<div class="offer offer-radius offer-danger">
+	<div class="shape">
+		<div class="shape-text">
+			Réunions							
+		</div>
+	</div>
+	<div class="offer-content">
+		<h3 class="lead">
+			Réunions et points
+		</h3>						
+		<p>
+			le 13 aout 2016
+		</p>
+	</div>
+</div>
+<div class="offer offer-radius offer-warning">
+	<div class="shape">
+		<div class="shape-text">
+			tournoi							
+		</div>
+	</div>
+	<div class="offer-content">
+		<h3 class="lead">
+			préparation du tournoi 
+		</h3>						
+		<p>
+			le 28 aout 2016
+		</p>
+	</div>
+</div>
+{#{% for blogPost in blogPosts %}
+    <div class="offer offer-radius offer-warning">
+        <div class="shape">
+		<div class="shape-text">
+			{{ blogPost.categorie }}						
+		</div>
+	</div>
+        <div class="offer-content">
+		<h3 class="lead">
+			<a href="{{ path('blogpost_show', { 'id': blogPost.id }) }}">{{ blogPost.title }}</a>
+		</h3>						
+		<p>
+			par {{ blogPost.author }} le {% if blogPost.createdAt %}{{ blogPost.createdAt|date('Y-m-d H:i:s') }}{% endif %}
+		</p>
+	</div>
+    </div>
+{% endfor %}#}

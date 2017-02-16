@@ -1,0 +1,137 @@
+t_tplatform_blogpost:
+    resource: "@TTplatformBundle/Resources/config/routing/blogpost.yml"
+    prefix:   /blogpost
+    
+t_tplatform_blogcomment:
+    resource: "@TTplatformBundle/Resources/config/routing/blogcomment.yml"
+    prefix:   /blogcomment
+    
+t_tplatform_annecompet:
+    resource: "@TTplatformBundle/Resources/config/routing/annecompet.yml"
+    prefix:   /annecompet
+
+t_tplatform_matchcompet:
+    resource: "@TTplatformBundle/Resources/config/routing/matchcompet.yml"
+    prefix:   /matchcompet
+
+t_tplatform_resumpost:
+    resource: "@TTplatformBundle/Resources/config/routing/resumpost.yml"
+    prefix:   /resumpost
+    
+t_tplatform_equipecompo:
+    resource: "@TTplatformBundle/Resources/config/routing/equipecompo.yml"
+    prefix:   /equipecompo
+
+t_tplatform_sponsor:
+    resource: "@TTplatformBundle/Resources/config/routing/sponsor.yml"
+    prefix:   /sponsor
+    
+t_tplatform_adminChampionnat:
+    resource: "@TTplatformBundle/Resources/config/routing/championnat.yml"
+    prefix:   /adminChampionnat
+
+t_tplatform_adminBureau:
+    resource: "@TTplatformBundle/Resources/config/routing/bureau.yml"
+    prefix:   /adminBureau
+
+t_tplatform_adminMultimedia:
+    resource: "@TTplatformBundle/Resources/config/routing/multimedia.yml"
+    prefix:   /adminMultimedia
+
+t_tplatform_adminInscription:
+    resource: "@TTplatformBundle/Resources/config/routing/inscription.yml"
+    prefix:   /adminInscription
+    
+homepage:
+    path:     /
+    defaults: { _controller: TTplatformBundle:Default:index }
+
+inscription:
+    path:     /inscription
+    defaults: { _controller: TTplatformBundle:Default:inscription }
+    
+bureau:
+    path:     /bureau
+    defaults: { _controller: TTplatformBundle:Default:bureau }
+
+historique:
+    path:     /historique
+    defaults: { _controller: TTplatformBundle:Default:historique }
+    
+reglementClub:
+    path:     /reglementClub
+    defaults: { _controller: TTplatformBundle:Default:reglementClub }
+    
+multimedia:
+    path:     /multimedia
+    defaults: { _controller: TTplatformBundle:Default:multimedia }
+    
+entrainement:
+    path:     /entrainement
+    defaults: { _controller: TTplatformBundle:Default:entrainement }
+    
+championnat:
+    path:     /championnat
+    defaults: { _controller: TTplatformBundle:Default:championnat }
+    
+tournois:
+    path:     /tournois
+    defaults: { _controller: TTplatformBundle:Default:tournois }
+    
+stages:
+    path:     /stages
+    defaults: { _controller: TTplatformBundle:Default:stages }
+
+reglementArbitre:
+    path:     /reglementArbitre
+    defaults: { _controller: TTplatformBundle:Default:reglementArbitre }
+    
+classement:
+    path:     /classement
+    defaults: { _controller: TTplatformBundle:Default:classement }
+    
+sponsors:
+    path:     /sponsors
+    defaults: { _controller: TTplatformBundle:Default:sponsors }
+    
+contact:
+    path:     /contact
+    defaults: { _controller: TTplatformBundle:Default:contact }
+
+administration:
+    path:     /administration
+    defaults: { _controller: TTplatformBundle:Default:administration }
+
+listeUser:
+    path:     /listeUser
+    defaults: { _controller: TTplatformBundle:Default:listeUser }
+    
+adminResumMatch:
+    path:     /adminResumMatch
+    defaults: { _controller: TTplatformBundle:Default:adminResumMatch }
+
+actualite:
+    path:     /actualite
+    defaults: { _controller: TTplatformBundle:Default:actualite }
+    
+adminMultimedia:
+    path:     /adminMultimedia
+    defaults: { _controller: TTplatformBundle:Default:adminMultimedia }
+
+promote_user:
+    path:    /promote/{id}
+    defaults: { _controller: TTplatformBundle:Default:promoteUser }
+    requirements:
+        id: \d+
+
+demote_user:
+    path:    /demote/{id}
+    defaults: { _controller: TTplatformBundle:Default:demoteUser }
+    requirements:
+        id: \d+
+        
+delete_user:
+    path:    /delete/{id}
+    defaults: { _controller: TTplatformBundle:Default:deleteUser }
+    requirements:
+        id: \d+

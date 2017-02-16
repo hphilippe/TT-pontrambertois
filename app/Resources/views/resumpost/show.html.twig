@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ResumPost</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resumPost.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ resumPost.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ resumPost.content|raw }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if resumPost.date %}{{ resumPost.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ resumPost.author }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="margin: 10px 20px;">
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <a class="btn btn-primary" href="{{ path('resumpost_index') }}">Retour à la liste des résumés</a>
+        {% endif %}
+        <a class="btn btn-primary" href="{{ path('resumpost_edit', { 'id': resumPost.id }) }}">Éditer le contenu</a>
+        <a class="btn btn-primary" href="{{ path('adminResumMatch') }}">Retour à l'administration du tableau</a>
+
+        {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+            <input class="btn btn-secondary"  type="submit" value="supprimer le contenu">
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

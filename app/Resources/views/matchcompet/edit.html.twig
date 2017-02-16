@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Éditer le score</h1>
+
+    {{ form_start(edit_form) }}
+    <div>
+        {{ form_label(edit_form.score) }}
+        {{ form_errors(edit_form.score) }}
+        {{ form_widget(edit_form.score) }}
+    </div>
+
+    <div style="display: none;">
+        {{ form_label(edit_form.journee) }}
+        {{ form_errors(edit_form.journee) }}
+        {{ form_widget(edit_form.journee) }}
+    </div>
+    <div style="display:none;">
+        {{ form_label(edit_form.numeroEquie) }}
+        {{ form_errors(edit_form.numeroEquie) }}
+        {{ form_widget(edit_form.numeroEquie) }}
+    </div>
+    <div style="display:none;">
+        {{ form_label(edit_form.anne) }}
+        {{ form_errors(edit_form.anne) }}
+        {{ form_widget(edit_form.anne) }}
+    </div>
+    
+    <div style="margin: 10px 20px;">
+        <input class="btn btn-secondary" type="submit" value="Mettre à jour le contenu" />
+    {{ form_end(edit_form) }}
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="btn btn-primary" href="{{ path('matchcompet_index') }}">Retour à la liste des scores</a>
+        {% endif %}
+            <a class="btn btn-primary" href="{{ path('adminResumMatch') }}">Retour à l'administration du tableau</a>
+
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+            {{ form_start(delete_form, {'attr': {'class': 'form_display'}}) }}
+                <input class="btn btn-secondary" type="submit" value="Supprimer le contenu">
+            {{ form_end(delete_form) }}
+        {% endif %}
+            
+    </div>
+    {% if is_granted('ROLE_SUPER_ADMIN') %}
+        
+    liste des années :
+    {% for anneCompet in anneCompets %}
+     <div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anneCompet.id }}</td>
+            </tr>
+            <tr>
+                <th>Anneedepart</th>
+                <td>{{ anneCompet.anneeDepart }}</td>
+            </tr>
+            <tr>
+                <th>Phase</th>
+                <td>{{ anneCompet.phase }}</td>
+            </tr>
+            <tr>
+                <th>Nombre d'équipe</th>
+                <th>{{ anneCompet.numberEquipe }}</th>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    {% endfor %}
+    {% endif %}
+    
+    
+{% endblock %}
